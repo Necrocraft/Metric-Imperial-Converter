@@ -16,11 +16,11 @@ function ConvertHandler() {
         let val = arr[i].length;
         console.log("Run 1");
         var result = newInput.slice(0, newInput.length - val);
-        console.log(/[-]?[0-9]+[,.]?[0-9]*([\/][0-9]+[,.]?[0-9]*)*/g.test(result) && /[^a-zA-Z]/g.test(result));
+        console.log(typeof result);
       }
     }
     
-    return result;
+    return result === "" ? 1 : result;
   };
   
   this.getUnit = function(input) {
