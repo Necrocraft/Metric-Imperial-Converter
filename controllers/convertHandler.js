@@ -16,7 +16,9 @@ function ConvertHandler() {
   
   this.getUnit = function(input) {
     let newInput = input.toLowerCase();
+    console.log(newInput);
     if(newInput.endsWith("km" || "mi" || "kg" || "lbs" || "gal" || "l")) {
+      console.log("Run");
       var result = newInput.match(/km|mi|kg|lbs|gal|l/);
     }
     
