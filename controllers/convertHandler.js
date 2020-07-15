@@ -9,13 +9,14 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
+    let result;
     let newInput = input.toLowerCase();
     let arr = ["km", "mi", "kg", "lbs", "gal",  "l"];
     for(let i = 0; i < arr.length; i++) {
       if(newInput.endsWith(arr[i])) {
         let val = arr[i].length;
         console.log("Run 1");
-        var result = newInput.slice(0, newInput.length - val);
+        result = newInput.slice(0, newInput.length - val);
         console.log(typeof result);
       }
     }
@@ -24,13 +25,14 @@ function ConvertHandler() {
   };
   
   this.getUnit = function(input) {
+    let result;
     let newInput = input.toLowerCase();
     let arr = ["km", "mi", "kg", "lbs", "gal",  "l"];
     for(let i = 0; i < arr.length; i++) {
       if(newInput.endsWith(arr[i])) {
         let val = arr[i].length;
         console.log("Run 2");
-        var result = newInput.slice(newInput.length - val, newInput.length);
+        result = newInput.slice(newInput.length - val, newInput.length);
       }
     }
     
