@@ -19,8 +19,12 @@ function ConvertHandler() {
     let arr = ["km", "mi", "kg", "lbs", "gal",  "l"];
     for(let i = 0; i < arr.length; i++) {
       if(newInput.endsWith(arr[i])) {
+        let val = arr[i].length;
+        console.log(val);
+        console.log(newInput.length);
         console.log("Run");
-        var result = newInput.match(/km|mi|kg|lbs|gal|l/)[0];
+        var result = newInput.slice(newInput.length - val, val);
+        console.log(result);
       }
     }
     
