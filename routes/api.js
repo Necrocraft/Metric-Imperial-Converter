@@ -26,6 +26,8 @@ module.exports = function (app) {
       
       console.log(initUnit);
       console.log(initNum);
+    console.log(returnNum);
+    console.log(returnUnit);
       //res.json
     });
     
