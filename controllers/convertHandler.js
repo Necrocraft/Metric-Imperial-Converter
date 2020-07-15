@@ -9,7 +9,16 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    var result;
+    let newInput = input.toLowerCase();
+    let arr = ["km", "mi", "kg", "lbs", "gal",  "l"];
+    for(let i = 0; i < arr.length; i++) {
+      if(newInput.endsWith(arr[i])) {
+        let val = arr[i].length;
+        console.log("Run");
+        var result = newInput.slice(0, newInput.length - val);
+        console.log(result);
+      }
+    }
     
     return result;
   };
@@ -20,11 +29,8 @@ function ConvertHandler() {
     for(let i = 0; i < arr.length; i++) {
       if(newInput.endsWith(arr[i])) {
         let val = arr[i].length;
-        console.log(val);
-        console.log(newInput.length);
         console.log("Run");
-        var result = newInput.slice(newInput.length - val, val);
-        console.log(result);
+        var result = newInput.slice(newInput.length - val, newInput.length);
       }
     }
     
