@@ -17,12 +17,16 @@ function ConvertHandler() {
         let val = arr[i].length;
         console.log("Run 1");
         result = newInput.slice(0, newInput.length - val);
-        console.log(typeof result);
-        console.log(eval(result));
+        if(/^[^a-zA-Z]*$/.test(result)) {
+          result = eval(result);
+        }
+        else {
+          return null;
+        }
       }
     }
     
-    return result === "" ? 1 : result;
+    return result === undefined ? 1 : result;
   };
   
   this.getUnit = function(input) {
