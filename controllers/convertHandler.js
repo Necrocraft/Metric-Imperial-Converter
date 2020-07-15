@@ -15,7 +15,8 @@ function ConvertHandler() {
   };
   
   this.getUnit = function(input) {
-    var result;
+    let newInput = input.toLowerCase();
+    var result = input.endsWith("km" || "mi" || "kg" || "lbs" || "gal" || "l");
     
     return result;
   };
@@ -36,6 +37,9 @@ function ConvertHandler() {
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
+    const lToGal = 1 / galToL;
+    const kgToLbs = 1 / lbsToKg;
+    const kmToMi = 1 / miToKm;
     var result;
     
     return result;
