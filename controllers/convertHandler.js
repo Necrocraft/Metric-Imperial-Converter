@@ -11,21 +11,14 @@ function ConvertHandler() {
   this.getNum = function(input) {
     let result;
     let newInput = input.toLowerCase();
-    let arr = ["km", "mi", "kg", "lbs", "gal",  "l"];
-    for(let i = 0; i < arr.length; i++) {
-      if(newInput.endsWith(arr[i])) {
-        let val = arr[i].length;
-        console.log("Run 1");
-        result = newInput.slice(0, newInput.length - val);
-        if(/^[^a-zA-Z]*$/.test(result)) {
+    let val = this.getUnit(input).length;
+    result = newInput.slice(0, newInput.length - val);
+    if(/^[^a-zA-Z]*$/.test(result)) {
           result = eval(result);
         }
         else {
-          console.log("Err")
           return null;
         }
-      }
-    }
     
     return result === undefined ? 1 : result;
   };
@@ -39,10 +32,9 @@ function ConvertHandler() {
         let val = arr[i].length;
         console.log("Run 2");
         result = newInput.slice(newInput.length - val, newInput.length);
+        return result;
       }
     }
-    
-    return result;
   };
   
   this.getReturnUnit = function(initUnit) {
