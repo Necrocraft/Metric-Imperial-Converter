@@ -21,6 +21,7 @@ function ConvertHandler() {
           result = eval(result);
         }
         else {
+          console.log("Err")
           return null;
         }
       }
@@ -57,7 +58,7 @@ function ConvertHandler() {
     }else if(initUnit === "gal") {
       result = "l";
     } else if(initUnit === "l") {
-      result = "lbs";
+      result = "gal";
     }
     
     return result;
