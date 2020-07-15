@@ -18,6 +18,7 @@ function ConvertHandler() {
         console.log("Run 1");
         result = newInput.slice(0, newInput.length - val);
         console.log(typeof result);
+        console.log(eval(result));
       }
     }
     
