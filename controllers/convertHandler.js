@@ -14,9 +14,9 @@ function ConvertHandler() {
     for(let i = 0; i < arr.length; i++) {
       if(newInput.endsWith(arr[i])) {
         let val = arr[i].length;
-        console.log("Run");
+        console.log("Run 1");
         var result = newInput.slice(0, newInput.length - val);
-        console.log(result);
+        console.log(/[-]?[0-9]+[,.]?[0-9]*([\/][0-9]+[,.]?[0-9]*)*/g.test(result));
       }
     }
     
@@ -29,7 +29,7 @@ function ConvertHandler() {
     for(let i = 0; i < arr.length; i++) {
       if(newInput.endsWith(arr[i])) {
         let val = arr[i].length;
-        console.log("Run");
+        console.log("Run 2");
         var result = newInput.slice(newInput.length - val, newInput.length);
       }
     }
