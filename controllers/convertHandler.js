@@ -11,7 +11,8 @@ function ConvertHandler() {
   this.getNum = function(input) {
     let result;
     let newInput = input.toLowerCase();
-    let val = this.getUnit(input).length;
+    if(this.getUnit(input) != null) {
+      let val = this.getUnit(input).length;
     result = newInput.slice(0, newInput.length - val);
     if(/^[^a-zA-Z]*$/.test(result)) {
           result = eval(result);
@@ -21,6 +22,10 @@ function ConvertHandler() {
         }
     
     return result === undefined ? 1 : result;
+    }
+    else {
+      return null;
+    }
   };
   
   this.getUnit = function(input) {
@@ -35,6 +40,7 @@ function ConvertHandler() {
         return result;
       }
     }
+    return null
   };
   
   this.getReturnUnit = function(initUnit) {
@@ -51,6 +57,8 @@ function ConvertHandler() {
       result = "l";
     } else if(initUnit === "l") {
       result = "gal";
+    } else {
+      return null;
     }
     
     return result;
@@ -82,6 +90,8 @@ function ConvertHandler() {
       result = kgToLbs * initNum;
     } else if(initUnit === "lbs"){
       result = lbsToKg * initNum;
+    } else {
+      return null;
     }
     
     return result;
