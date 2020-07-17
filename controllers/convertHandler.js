@@ -102,7 +102,7 @@ function ConvertHandler() {
       return null;
     }
     
-    return result;
+    return `${initNum} ${initUnit} converts to ${returnNum} ${returnUnit}`;
   };
   
 }
