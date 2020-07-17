@@ -23,13 +23,33 @@ module.exports = function (app) {
       var returnNum = convertHandler.convert(initNum, initUnit);
       var returnUnit = convertHandler.getReturnUnit(initUnit);
       var toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
+    
+      let result;
+      if(initUnit === null && initNum === null) {
+        result = {
+          error: "invalid unit and number"
+        }
+      } else if(initUnit === null) {
+        result = {
+          error: "invalid unit"
+        }
+      } else if(initNum === null) {
+        result = {
+          error: "invalid num"
+        }
+      } else {
+        result = {
+          initUnit,
+          initNum,
+          returnUnit,
+          returnNum,
+          toString
+        }
+      }
       
-      console.log(initUnit);
-      console.log(initNum);
-    console.log(returnNum);
-    console.log(returnUnit);
-    console.log(toString);
-      //res.json
+      console.log(result);
+      res.json(result);
+        //res.json
     });
     
 };
