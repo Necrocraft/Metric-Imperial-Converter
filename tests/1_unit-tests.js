@@ -65,8 +65,9 @@ suite('Unit Tests', function(){
     });
     
     test('Unknown Unit Input', function(done) {
-            
-      //done();
+      var input = '3.2ss';
+      assert.equal(convertHandler.getUnit(input), null);
+      done();
     });  
     
   });
