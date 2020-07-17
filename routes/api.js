@@ -22,7 +22,7 @@ module.exports = function (app) {
       var initUnit = convertHandler.getUnit(input);
       var returnNum = convertHandler.convert(initNum, initUnit);
       var returnUnit = convertHandler.getReturnUnit(initUnit);
-      var toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
+      var string = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
     
       let result;
     
@@ -44,7 +44,7 @@ module.exports = function (app) {
           initUnit,
           returnNum,
           returnUnit,
-          toString
+          string
         }
       }
       console.log(result);
