@@ -34,13 +34,27 @@ suite('Functional Tests', function() {
       });
       
       test('Convert 32g (invalid input unit)', function(done) {
-        
-        //done();
+        chai.request(server)
+        .get('/api/convert')
+        .query({input: '32g'})
+        .end(function(err, res){
+          assert.equal(res.status, 200);
+          assert.equal(res.body.initNum, null);
+          assert.equal(res.body.initUnit, null);
+          assert.equal(res.body.returnUnit, 32g );
+          done();
       });
       
       test('Convert 3/7.2/4kg (invalid number)', function(done) {
-        
-        //done();
+                chai.request(server)
+        .get('/api/convert')
+        .query({input: '32g'})
+        .end(function(err, res){
+          assert.equal(res.status, 200);
+          assert.equal(res.body.initNum, null);
+          assert.equal(res.body.initUnit, null);
+          assert.equal(res.body.returnUnit, 32g );
+          done();
       });  
       
       test('Convert 3/7.2/4kilomegagram (invalid number and unit)', function(done) {
