@@ -27,29 +27,27 @@ module.exports = function (app) {
       let result;
     
       if(initUnit === null && initNum === null) {
-        res.json({
+        result = {
           error: "invalid unit and number"
-        })
+        }
       } else if(initUnit === null) {
-         res.json({
+        result = {
           error: "invalid unit"
-        })
+        }
       } else if(initNum === null) {
-         res.json({
+        result = {
           error: "invalid num"
-        })
+        }
       } else {
         result = {
-          initUnit,
           initNum,
-          returnUnit,
+          initUnit,
           returnNum,
+          returnUnit,
           toString
         }
       }
-    
       console.log(result);
-    
       res.json(result);
     });
     
