@@ -98,7 +98,9 @@ function ConvertHandler() {
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    var result;
+    if(initNum === null || initUnit === null || returnNum === null || returnUnit === null) {
+      return null;
+    }
     
     return result;
   };
